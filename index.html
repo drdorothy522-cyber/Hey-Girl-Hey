@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hey Girl Hey | Support for Women Facing Domestic Abuse | Duncanville, TX</title>
-  <meta name="description" content="Hey Girl Hey is a Duncanville, Texas nonprofit supporting women in domestic abuse situations with safety resources, advocacy, and community.">
+  <title>Hey Girl | Support for Women Facing Domestic Abuse | Duncanville, TX</title>
+  <meta name="description" content="Hey Girl is a Duncanville, Texas nonprofit supporting women in domestic abuse situations with safety resources, advocacy, and community.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#5b2a86">
+  <meta name="theme-color" content="#e21b7c">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hey Girl Hey | Duncanville, TX">
-  <meta property="og:description" content="You are not alone. Support, safety resources, and community for women facing domestic abuse.">
-  <meta property="og:url" content="https://heygirlhey.org/">
-  <meta property="og:image" content="https://heygirlhey.org/assets/img/og-image.jpg">
+  <meta property="og:title" content="Hey Girl | Duncanville, TX">
+  <meta property="og:description" content="Helping Every Young Girl in Real Life. Support, safety resources, and community for women facing domestic abuse in Duncanville, TX.">
+  <meta property="og:url" content="https://heygirl.org/">
+  <meta property="og:image" content="https://heygirl.org/assets/img/og-image.jpg">
 
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,9 +27,10 @@
   {
     "@context": "https://schema.org",
     "@type": "NGO",
-    "name": "Hey Girl Hey",
-    "description": "Nonprofit supporting women in domestic abuse situations.",
-    "url": "https://heygirlhey.org/",
+    "name": "Hey Girl",
+    "description": "Helping Every Young Girl in Real Life. Nonprofit supporting women in domestic abuse situations.",
+    "slogan": "She is seen. She is loved. She is limitless.",
+    "url": "https://heygirl.org/",
     "areaServed": "Duncanville, Texas",
     "address": {
       "@type": "PostalAddress",
@@ -63,9 +65,9 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="#top" class="brand" aria-label="Hey Girl Hey home">
-        <img src="assets/img/logo.svg" alt="" class="brand__logo" width="40" height="40">
-        <span class="brand__name">Hey Girl <em>Hey</em></span>
+      <a href="#top" class="brand" aria-label="Hey Girl home">
+        <img src="assets/img/logo-sm.jpg" alt="" class="brand__logo" width="48" height="48">
+        <span class="brand__name">Hey <em>Girl</em></span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -90,10 +92,11 @@
     <!-- HERO -->
     <section id="top" class="hero">
       <div class="container hero__inner">
-        <p class="eyebrow">Duncanville, Texas</p>
+        <div class="hero__copy">
+        <p class="eyebrow">Helping Every Young Girl in Real Life · Duncanville, TX</p>
         <h1>You are not alone.<br>You are not to blame.<br><span class="accent">You deserve to be safe.</span></h1>
         <p class="lead">
-          Hey Girl Hey is a community of women supporting women through domestic abuse,
+          Hey Girl is a community of women supporting women through domestic abuse,
           from the first phone call to a safe, independent life.
         </p>
         <div class="hero__actions">
@@ -106,6 +109,13 @@
           to leave this page instantly.
           <a href="#safety">Learn more</a>
         </p>
+        </div>
+        <div class="hero__logo">
+          <picture>
+            <source srcset="assets/img/logo.webp" type="image/webp">
+            <img src="assets/img/logo.jpg" alt="Hey Girl logo: H.E.Y. G.I.R.L. Helping Every Young Girl in Real Life. Faith, Confidence, Purpose, Godfidence. She is seen. She is loved. She is limitless." width="1000" height="1000" fetchpriority="high">
+          </picture>
+        </div>
       </div>
     </section>
 
@@ -116,7 +126,7 @@
           <p class="eyebrow">Who We Are</p>
           <h2>A sisterhood built on safety, dignity, and a way forward.</h2>
           <p>
-            Hey Girl Hey was founded in Duncanville, Texas to meet women where they are:
+            Hey Girl was founded in Duncanville, Texas to meet women where they are:
             scared, unsure, and often isolated. We walk alongside survivors with
             practical help, emotional support, and a community that believes them.
           </p>
@@ -136,8 +146,14 @@
             <p>A community where every woman has the support she needs to leave abuse and live free.</p>
           </div>
           <div class="card">
-            <h3>Our Values</h3>
-            <p>Belief. Confidentiality. Dignity. Empowerment. No judgment, ever.</p>
+            <h3>Our Pillars</h3>
+            <ul class="pillars">
+              <li><span class="pillar pillar--pink">Faith</span></li>
+              <li><span class="pillar pillar--teal">Confidence</span></li>
+              <li><span class="pillar pillar--gold">Purpose</span></li>
+              <li><span class="pillar pillar--pink">Godfidence</span></li>
+            </ul>
+            <p class="affirmation"><span class="accent">She is seen.</span> <span class="teal">She is loved.</span> <span class="gold">She is limitless.</span></p>
           </div>
         </div>
       </div>
@@ -186,13 +202,13 @@
         </div>
 
         <div class="callout">
-          <h3>Reach Hey Girl Hey</h3>
+          <h3>Reach Hey Girl</h3>
           <p>
             Not an emergency, but you need someone to talk to? We're here.
             <!-- TODO: Replace with real phone / email once set up -->
           </p>
           <div class="callout__actions">
-            <a class="btn btn--primary" href="mailto:help@heygirlhey.org">help@heygirlhey.org</a>
+            <a class="btn btn--primary" href="mailto:help@heygirl.org">help@heygirl.org</a>
             <a class="btn btn--outline" href="tel:+10000000000">(000) 000-0000</a>
           </div>
         </div>
@@ -275,17 +291,17 @@
             <p>Every dollar helps a woman take her next safe step.</p>
             <!-- TODO: Replace href with Stripe Payment Link / donation platform -->
             <a class="btn btn--primary" href="#donate" data-donate>Give Now</a>
-            <p class="fineprint">Hey Girl Hey is a Texas nonprofit. <!-- TODO: add 501(c)(3) status + EIN once approved --></p>
+            <p class="fineprint">Hey Girl is a Texas nonprofit. <!-- TODO: add 501(c)(3) status + EIN once approved --></p>
           </div>
           <div class="card">
             <h3>Volunteer</h3>
             <p>Lend your time, skills, or a listening ear. We'll train you.</p>
-            <a class="btn btn--outline" href="mailto:volunteer@heygirlhey.org?subject=I%20want%20to%20volunteer">Sign Up</a>
+            <a class="btn btn--outline" href="mailto:volunteer@heygirl.org?subject=I%20want%20to%20volunteer">Sign Up</a>
           </div>
           <div class="card">
             <h3>Partner</h3>
             <p>Businesses, churches, and organizations: let's work together.</p>
-            <a class="btn btn--outline" href="mailto:partners@heygirlhey.org?subject=Partnership">Reach Out</a>
+            <a class="btn btn--outline" href="mailto:partners@heygirl.org?subject=Partnership">Reach Out</a>
           </div>
         </div>
       </div>
@@ -298,9 +314,9 @@
           <p class="eyebrow">Contact</p>
           <h2>Get in touch.</h2>
           <address class="contact-block">
-            <p><strong>Hey Girl Hey</strong><br>Duncanville, Texas</p>
+            <p><strong>Hey Girl</strong><br>Duncanville, Texas</p>
             <!-- TODO: Add mailing address (consider a PO Box — never publish a shelter or safe-house address) -->
-            <p>Email: <a href="mailto:hello@heygirlhey.org">hello@heygirlhey.org</a></p>
+            <p>Email: <a href="mailto:hello@heygirl.org">hello@heygirl.org</a></p>
             <p>Phone: <a href="tel:+10000000000">(000) 000-0000</a></p>
           </address>
           <p class="fineprint">
@@ -345,8 +361,9 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div>
-        <p class="brand__name">Hey Girl <em>Hey</em></p>
-        <p>Supporting women through domestic abuse. Duncanville, Texas.</p>
+        <p class="brand__name">Hey <em>Girl</em></p>
+        <p>Helping Every Young Girl in Real Life.<br>Supporting women through domestic abuse. Duncanville, Texas.</p>
+        <p class="fineprint footer-verse">"God is within her, she will not fall." — Psalm 46:5</p>
       </div>
       <nav aria-label="Footer">
         <ul>
@@ -364,7 +381,7 @@
       </div>
     </div>
     <div class="container site-footer__legal">
-      <p>&copy; <span id="year"></span> Hey Girl Hey. All rights reserved. <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      <p>&copy; <span id="year"></span> Hey Girl. All rights reserved. <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </div>
   </footer>
 

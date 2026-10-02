@@ -1,8 +1,17 @@
-# Hey Girl Hey
+# Hey Girl
 
-Nonprofit website for **Hey Girl Hey**, a Duncanville, Texas organization supporting women in domestic abuse situations.
+**H.E.Y. G.I.R.L.** — Helping Every Young Girl in Real Life.
+
+Nonprofit website for **Hey Girl**, a Duncanville, Texas organization supporting women in domestic abuse situations.
 
 Static site. No build step. Deploys anywhere (GitHub Pages, Netlify, Vercel, Cloudflare Pages).
+
+## Brand
+
+- Colors: pink `#e21b7c`, teal `#1aa3b5`, gold `#d9a21b` (see `:root` in `styles.css`).
+- Pillars: Faith · Confidence · Purpose · Godfidence.
+- Affirmation: *She is seen. She is loved. She is limitless.*
+- Verse: Psalm 46:5.
 
 ## Structure
 
@@ -10,7 +19,7 @@ Static site. No build step. Deploys anywhere (GitHub Pages, Netlify, Vercel, Clo
 index.html            # Single-page skeleton
 assets/css/styles.css # Styles (mobile-first, no framework)
 assets/js/main.js     # Quick Exit, nav, form + donate placeholders
-assets/img/           # Logo, favicon (add og-image.jpg before launch)
+assets/img/           # logo.webp/.jpg (hero), logo-sm.jpg (header), favicon.png, apple-touch-icon.png, og-image.jpg
 ```
 
 ## Safety features (do not remove)
@@ -24,12 +33,11 @@ assets/img/           # Logo, favicon (add og-image.jpg before launch)
 ## Before launch (TODO)
 
 - [ ] Verify every phone number in the **Local Shelters & Services** block.
-- [ ] Replace placeholder phone `(000) 000-0000` and `@heygirlhey.org` emails with real ones.
+- [ ] Replace placeholder phone `(000) 000-0000` and `@heygirl.org` emails with real ones.
 - [ ] Wire the contact form (Formspree, Netlify Forms, or Supabase Edge Function).
 - [ ] Replace the Donate button href with a Stripe Payment Link.
 - [ ] Add 501(c)(3) status and EIN to the Donate card once approved.
-- [ ] Add `assets/img/og-image.jpg` (1200x630) for social sharing.
-- [ ] Set real domain in `og:url` and the JSON-LD `url`.
+- [ ] Set real domain in `og:url`, JSON-LD `url`, `sitemap.xml`, `robots.txt`, and all `@heygirl.org` emails (placeholder domain).
 - [ ] Write Privacy and Terms pages (footer links are placeholders).
 - [ ] Never publish a shelter or safe-house address. Use a PO Box.
 
