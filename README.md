@@ -33,11 +33,11 @@ assets/img/           # logo.webp/.jpg (hero), logo-sm.jpg (header), favicon.svg
 ## Before launch (TODO)
 
 - [ ] Verify every phone number in the **Local Shelters & Services** block.
-- [ ] Replace placeholder phone `(000) 000-0000` and `@heygirl.org` emails with real ones.
+- [ ] Replace placeholder phone `(000) 000-0000` and `@hghey.org` emails with real ones.
 - [ ] Wire the contact form (Formspree, Netlify Forms, or Supabase Edge Function).
 - [ ] Replace the Donate button href with a Stripe Payment Link.
 - [ ] Add 501(c)(3) status and EIN to the Donate card once approved.
-- [ ] Set real domain in `og:url`, JSON-LD `url`, `sitemap.xml`, `robots.txt`, and all `@heygirl.org` emails (placeholder domain).
+- [ ] Set real domain in `og:url`, JSON-LD `url`, `sitemap.xml`, `robots.txt`, and all `@hghey.org` emails once mailboxes exist.
 - [ ] Write Privacy and Terms pages (footer links are placeholders).
 - [ ] Never publish a shelter or safe-house address. Use a PO Box.
 
