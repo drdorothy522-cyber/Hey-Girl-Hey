@@ -293,6 +293,9 @@ p { margin: 0 0 1em; }
 }
 .leader-card img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
 .leader-card .leader__name { font-size: 1.15rem; }
+.leader-card .leader__tagline { margin-bottom: 0.9rem; }
+.leader-card p { font-size: 0.95rem; }
+.leader__fun { background: var(--teal-100); color: var(--ink-soft); border-radius: 8px; padding: 0.6rem 0.8rem; margin: 0.75rem 0 0; }
 
 /* ---------- Contact ---------- */
 .contact-block { font-style: normal; }
