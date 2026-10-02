@@ -306,6 +306,18 @@ p { margin: 0 0 1em; }
 .leader-card p { font-size: 0.95rem; }
 .leader__fun { background: var(--teal-100); color: var(--ink-soft); border-radius: 8px; padding: 0.6rem 0.8rem; margin: 0.75rem 0 0; }
 
+/* ---------- S'HEROs gallery ---------- */
+.shero-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 600px) { .shero-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .shero-grid { grid-template-columns: repeat(4, 1fr); } }
+.shero { margin: 0; text-align: center; }
+.shero img {
+  width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 3px var(--pink-100), var(--shadow);
+}
+.shero figcaption { margin-top: 0.75rem; font-weight: 700; color: var(--ink); }
+.shero__nick { display: block; font-weight: 500; color: var(--pink-500); font-size: 0.9rem; }
+
 /* ---------- Contact ---------- */
 .contact-block { font-style: normal; }
 .contact-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
