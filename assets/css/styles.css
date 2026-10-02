@@ -309,7 +309,7 @@ p { margin: 0 0 1em; }
 /* ---------- S'HEROs gallery ---------- */
 .shero-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 600px) { .shero-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 900px) { .shero-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 900px) { .shero-grid { grid-template-columns: repeat(4, 1fr); gap: 1.75rem; } }
 .shero { margin: 0; text-align: center; }
 .shero img {
   width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover;
@@ -317,6 +317,7 @@ p { margin: 0 0 1em; }
 }
 .shero figcaption { margin-top: 0.75rem; font-weight: 700; color: var(--ink); }
 .shero__nick { display: block; font-weight: 500; color: var(--pink-500); font-size: 0.9rem; }
+.shero__bio { display: block; margin-top: 0.6rem; font-weight: 400; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; text-align: left; }
 
 /* ---------- Contact ---------- */
 .contact-block { font-style: normal; }
