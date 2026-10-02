@@ -19,6 +19,7 @@ Static site. No build step. Deploys anywhere (GitHub Pages, Netlify, Vercel, Clo
 index.html            # Single-page skeleton
 assets/css/styles.css # Styles (mobile-first, no framework)
 assets/js/main.js     # Quick Exit, nav, form + donate placeholders
+assets/img/team/      # Leadership headshots, 4:5 crop, 800x1000 jpg + webp
 assets/img/           # logo.webp/.jpg (hero), logo-sm.jpg (header), favicon.svg/.png (vector crown mark), apple-touch-icon.png, og-image.jpg
 ```
 

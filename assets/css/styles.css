@@ -267,6 +267,33 @@ p { margin: 0 0 1em; }
   color: var(--teal-500); font-weight: 800;
 }
 
+/* ---------- Leadership ---------- */
+.leader--featured {
+  display: grid; gap: 2rem; align-items: start;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.5rem; box-shadow: var(--shadow); margin-bottom: 2rem;
+}
+@media (min-width: 900px) {
+  .leader--featured { grid-template-columns: 360px 1fr; padding: 2rem; }
+}
+.leader__photo img { width: 100%; height: auto; border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; }
+.leader__role {
+  text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.75rem; font-weight: 700;
+  color: var(--gold-500); margin: 0 0 0.35rem;
+}
+.leader__name { margin-bottom: 0.25rem; font-size: 1.6rem; }
+.leader__tagline { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+.leader__pull { font-size: 1.2rem; font-weight: 700; color: var(--pink-700); border-left: 4px solid var(--pink-500); padding-left: 1rem; }
+.leader__motto { font-weight: 800; color: var(--teal-500); font-size: 1.1rem; margin: 1.25rem 0 0; }
+
+.leaders-grid:empty { display: none; }
+.leader-card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.25rem; box-shadow: var(--shadow);
+}
+.leader-card img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; margin-bottom: 1rem; }
+.leader-card .leader__name { font-size: 1.15rem; }
+
 /* ---------- Contact ---------- */
 .contact-block { font-style: normal; }
 .contact-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
