@@ -267,3 +267,6 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* ---------- 404 / full-height hero ---------- */
+.hero--full { min-height: 70vh; display: flex; align-items: center; }

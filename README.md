@@ -40,7 +40,30 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-## Deploy
+## Deploy (Vercel)
 
-- **GitHub Pages:** Settings → Pages → Deploy from branch → `/ (root)`.
-- **Netlify / Vercel:** import repo, no build command, publish directory `/`.
+This repo is Vercel-ready. No framework, no build command.
+
+1. Go to [vercel.com/new](https://vercel.com/new) and import `trudellcolton1-arch/Hey-Girl-Hey`.
+2. Framework Preset: **Other**. Build Command: *(leave empty)*. Output Directory: *(leave empty, defaults to root)*.
+3. Click **Deploy**. Every push to `master` auto-deploys; every branch gets a preview URL.
+4. Add your domain under **Settings → Domains** and point DNS (`A 76.76.21.21` or `CNAME cname.vercel-dns.com`).
+
+`vercel.json` sets:
+
+- **Security headers**: CSP, HSTS, `X-Frame-Options: DENY`, `nosniff`, `Permissions-Policy`.
+- **`Referrer-Policy: no-referrer`**: the Quick Exit destination (and any outbound link) never learns a visitor came from this site. Keep this.
+- **Caching**: `/assets/*` cached for a year (bump filenames when you change them, e.g. `styles.v2.css`); HTML always revalidates.
+- **Clean URLs**: `/about.html` → `/about` when you add more pages.
+
+### CSP gotcha
+
+The Content-Security-Policy blocks inline `<script>` and any third-party script by default. When you add Stripe, a form backend, or analytics, add their domains to `script-src`, `connect-src`, and `frame-src` in `vercel.json` or they will silently fail. Test on a preview deploy first.
+
+### Privacy note
+
+Think twice before adding Vercel Analytics or any tracker. Visitor data on a domestic-violence site is sensitive. If you add analytics, make it cookieless and say so in the Privacy page.
+
+### Alternative: GitHub Pages / Netlify
+
+Also works with zero config: deploy from `/ (root)`. The headers in `vercel.json` will not apply there.
