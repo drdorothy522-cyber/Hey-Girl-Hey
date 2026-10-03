@@ -222,6 +222,12 @@ p { margin: 0 0 1em; }
 .card-stack { display: grid; gap: 1rem; }
 .card .btn { margin-top: 0.5rem; }
 
+/* ---------- Scriptures ---------- */
+.scriptures { display: grid; gap: 1rem; margin-top: 1.75rem; }
+.scripture { margin: 0; padding: 1rem 1.25rem; border-left: 4px solid var(--gold-500); background: var(--gold-100); border-radius: 0 10px 10px 0; }
+.scripture p { margin: 0 0 0.35rem; font-style: italic; color: var(--ink-soft); }
+.scripture cite { font-style: normal; font-weight: 700; font-size: 0.85rem; color: #9a7110; }
+
 /* ---------- Pillars ---------- */
 .pillars { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .pillar {
