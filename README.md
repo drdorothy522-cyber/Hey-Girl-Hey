@@ -2,7 +2,7 @@
 
 **H.E.Y. G.I.R.L.** — Helping Every Young Girl in Real Life.
 
-Nonprofit website for **Hey Girl**, a Duncanville, Texas organization supporting women in domestic abuse situations.
+Nonprofit website for **Hey Girl**, a Dallas–Fort Worth, Texas organization supporting women in domestic abuse situations.
 
 Static site. No build step. Deploys anywhere (GitHub Pages, Netlify, Vercel, Cloudflare Pages).
 
