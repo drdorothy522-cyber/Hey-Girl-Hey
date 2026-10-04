@@ -62,7 +62,7 @@ This repo is Vercel-ready. No framework, no build command.
 
 - **Security headers**: CSP, HSTS, `X-Frame-Options: DENY`, `nosniff`, `Permissions-Policy`.
 - **`Referrer-Policy: no-referrer`**: the Quick Exit destination (and any outbound link) never learns a visitor came from this site. Keep this.
-- **Caching**: `/assets/*` cached for a year (bump filenames when you change them, e.g. `styles.v2.css`); HTML always revalidates.
+- **Caching**: images under `/assets/img/` cached for a year. CSS, JS, and HTML always revalidate, so style changes show up on the next page load. The `?v=` on the stylesheet and script URLs busts any copies cached before this rule existed.
 - **Clean URLs**: `/about.html` → `/about` when you add more pages.
 
 ### CSP gotcha
