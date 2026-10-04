@@ -1,4 +1,4 @@
-# Hey Girl
+# HEY GIRL
 
 **H.E.Y. G.I.R.L.** — Helping Every Young Girl in Real Life.
 
