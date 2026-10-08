@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found | H.E.Y. G.I.R.L. the Movement</title>
-  <meta name="description" content="Our purpose, mission, vision, and pillars. Faith, Identity, Purpose, GODfidence.">
-  <meta name="robots" content="noindex">
+  <title>Contact Us | H.E.Y. G.I.R.L. the Movement</title>
+  <meta name="description" content="Get in touch with H.E.Y. G.I.R.L. the Movement in Dallas–Fort Worth.">
+  <link rel="canonical" href="https://hghey.org/contact">
   <meta name="theme-color" content="#a3135c">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About Us | H.E.Y. G.I.R.L. the Movement">
-  <meta property="og:description" content="Our purpose, mission, vision, and pillars. Faith, Identity, Purpose, GODfidence.">
-  <meta property="og:url" content="https://hghey.org/about">
+  <meta property="og:title" content="Contact Us | H.E.Y. G.I.R.L. the Movement">
+  <meta property="og:description" content="Get in touch with H.E.Y. G.I.R.L. the Movement in Dallas–Fort Worth.">
+  <meta property="og:url" content="https://hghey.org/contact">
   <meta property="og:image" content="https://hghey.org/assets/img/og-image.jpg">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/img/favicon.png" type="image/png" sizes="64x64">
@@ -42,7 +42,7 @@
           <li><a href="/team">Our Team</a></li>
           <li><a href="/get-help">Get Help</a></li>
           <li><a href="/support">Support Us</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/contact" aria-current="page">Contact Us</a></li>
           <li><a href="/support#donate" class="btn btn--primary">Donate Now</a></li>
         </ul>
       </nav>
@@ -53,16 +53,38 @@
 
     <section class="page-band">
       <div class="container">
-        <h1>Page Not Found</h1>
-        <p>We couldn't find that page. But help is still here.</p>
+        <h1>Contact Us</h1>
+        <p>Please contact us for more information.</p>
       </div>
     </section>
+
     <section class="section">
-      <div class="container center">
-        <a href="/" class="btn btn--primary">Back to Home</a>&nbsp;&nbsp;
-        <a href="/get-help" class="btn btn--outline">Get Help</a>
+      <div class="container grid grid--2">
+        <address class="contact-block">
+          <span class="label">Contact Us</span><br>
+          <a href="mailto:hello@hghey.org">hello@hghey.org</a><br>
+          <!-- TODO: phone, PO Box -->
+          Dallas&ndash;Fort Worth, Texas
+          <p class="fineprint mt">Please do not share details about your location or situation over email if you believe your accounts may be monitored.</p>
+        </address>
+
+        <!-- TODO: wire to Formspree / Netlify Forms / Supabase -->
+        <form class="news-form" id="contact-form" action="#" method="post" novalidate>
+          <div class="field"><label for="name">Name (or nickname)</label><input id="name" name="name" type="text" autocomplete="off" required></div>
+          <div class="field"><label for="email">Email or phone</label><input id="email" name="contact" type="text" autocomplete="off" required></div>
+          <div class="field">
+            <label for="safe">Is it safe to contact you this way?</label>
+            <select id="safe" name="safe_to_contact" required>
+              <option value="">Select one</option><option value="yes">Yes</option><option value="no">No, please don't</option><option value="text-only">Text only</option><option value="email-only">Email only</option>
+            </select>
+          </div>
+          <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          <button class="btn btn--primary" type="submit">Send Message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">

@@ -15,18 +15,32 @@ Static site. No build step. Deploys anywhere (GitHub Pages, Netlify, Vercel, Clo
 
 ## Structure
 
+Multi-page static site. Clean URLs via `vercel.json` (`/about` serves `about.html`).
+
 ```
-index.html            # Single-page skeleton
-assets/css/styles.css # Styles (mobile-first, no framework)
+index.html            # Home: hero, three-column band, newsletter + contact
+about.html            # Purpose, Mission, Vision, Pillars, Scriptures
+team.html             # Officers, Board of Directors, S'HEROs (mentors)
+get-help.html         # Domestic violence resources + safe browsing
+support.html          # Give, Volunteer, Mentor, Pray, Partner
+contact.html          # Contact form + info
+404.html
+assets/css/styles.css # Pink palette, Jost typeface, reference-style layout
 assets/js/main.js     # Quick Exit, nav, form + donate placeholders
-assets/img/team/      # Leadership headshots, 4:5 crop, 800x1000 jpg + webp
-assets/img/           # logo.webp/.jpg (hero), logo-sm.jpg (header), favicon.svg/.png (vector crown mark), apple-touch-icon.png, og-image.jpg
+assets/img/team/      # Headshots: officers/board 4:5 or 1:1 at 800px; S'HEROs 1:1 at 800px
+assets/img/           # logo.webp/.jpg, logo-sm.jpg, favicon.svg/.png, apple-touch-icon.png, og-image.jpg
 ```
+
+Header and footer are duplicated in each page. To change them, edit every `.html` file (a `sed` across `*.html` works).
+
+### Hero photo
+
+The home hero is a pink gradient with the logo. To use a group photo instead, add class `hero--photo` to the `<section class="hero">` and set the image via `style="--hero-img:url('/assets/img/hero.jpg')"`, then allow inline styles in the CSP or move the URL into `styles.css`.
 
 ## Safety features (do not remove)
 
-- **Quick Exit button** (fixed, every page) + **double-ESC** keyboard shortcut. Uses `location.replace` so the site is removed from Back history.
-- **Crisis bar** with 911 and the National Domestic Violence Hotline on every page.
+- **Quick Exit button** (fixed, bottom-right, every page) + **double-ESC** keyboard shortcut. Uses `location.replace` so the site is removed from Back history.
+- **Hotline in the footer** of every page, plus a crisis bar on Get Help.
 - **Safe browsing section** explaining history/incognito/device safety.
 - Contact form asks "Is it safe to contact you this way?"
 - Form inputs use `autocomplete="off"` to avoid leaving saved data on shared devices.

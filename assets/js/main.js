@@ -52,10 +52,11 @@
     });
   }
 
-  // ---------- Contact form (placeholder) ----------
-  // TODO: Replace with Formspree / Netlify Forms / Supabase function.
-  var form = document.getElementById('contact-form');
-  if (form) {
+  // ---------- Forms (placeholders) ----------
+  // TODO: Replace with Formspree / Mailchimp / Supabase function.
+  ['contact-form', 'newsletter-form'].forEach(function (id) {
+    var form = document.getElementById(id);
+    if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = form.querySelector('.form-status');
@@ -63,10 +64,12 @@
         status.textContent = 'Please fill in all fields.';
         return;
       }
-      status.textContent = 'Thank you. This form is not yet connected. Please email us directly for now.';
+      status.textContent = id === 'newsletter-form'
+        ? 'Thank you. Our mailing list is not yet connected. Please email hello@hghey.org to be added.'
+        : 'Thank you. This form is not yet connected. Please email us directly for now.';
       form.reset();
     });
-  }
+  });
 
   // ---------- Donate (placeholder) ----------
   // TODO: Replace with Stripe Payment Link. e.g. https://donate.stripe.com/xxxx
