@@ -84,6 +84,40 @@
     });
   });
 
+  // ---------- PWA: service worker ----------
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+  }
+
+  // ---------- PWA: install banner ----------
+  var banner = document.getElementById('install-banner');
+  var installBtn = document.getElementById('install-btn');
+  var hint = document.getElementById('install-hint');
+  var deferredPrompt = null;
+  var dismissed = false;
+  try { dismissed = localStorage.getItem('hg-install-dismissed') === '1'; } catch (e) {}
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+  function showBanner() { if (banner && !dismissed && !standalone) banner.hidden = false; }
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); deferredPrompt = e; showBanner();
+  });
+  if (isIOS && banner && !standalone && !dismissed) {
+    hint.textContent = 'Tap Share, then "Add to Home Screen".';
+    installBtn.hidden = true;
+    showBanner();
+  }
+  if (installBtn) installBtn.addEventListener('click', function () {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function () { deferredPrompt = null; banner.hidden = true; });
+  });
+  var dismissBtn = document.getElementById('install-dismiss');
+  if (dismissBtn) dismissBtn.addEventListener('click', function () {
+    banner.hidden = true; try { localStorage.setItem('hg-install-dismissed', '1'); } catch (e) {}
+  });
+  window.addEventListener('appinstalled', function () { if (banner) banner.hidden = true; });
+
   // ---------- Footer year ----------
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();

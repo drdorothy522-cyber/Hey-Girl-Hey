@@ -45,6 +45,18 @@ The home hero is a pink gradient with the logo. To use a group photo instead, ad
 - Contact form asks "Is it safe to contact you this way?"
 - Form inputs use `autocomplete="off"` to avoid leaving saved data on shared devices.
 
+## PWA (installable app)
+
+The site installs to the home screen on iOS and Android.
+
+- `manifest.webmanifest`: name, icons (`assets/img/icon-*.png`), theme color, and three home-screen shortcuts: **I Need Help Now** (opens the panic sheet via `/?panic=1`), Get Help, Contact Us.
+- `sw.js`: service worker. Precaches the shell (home, Get Help, offline page, CSS, JS, logo). HTML is network-first with cache fallback; images cache-first; `/api/*` is never cached. Bump `VERSION` in `sw.js` when you change the precache list.
+- `offline.html`: shown for uncached pages with no connection. Call 911 and the hotline still work.
+- Install banner (`#install-banner` in every page, logic in `main.js`): Android/Chrome shows an Install button; iOS shows "Tap Share, then Add to Home Screen." Dismissal is remembered in localStorage.
+- Test install: Chrome DevTools → Application → Manifest shows no errors; Lighthouse PWA audit passes.
+
+**Discreet mode (recommended for DV safety):** an app named "Hey Girl" with a pink icon is visible to anyone holding the phone. Consider a second manifest with a neutral name and icon (e.g. "Notes") served from a different start URL, so a girl can choose which to install. Not built yet.
+
 ## Panic button (home page)
 
 A hot pink **I Need Help Now** button under the hero. Flow: confirm sheet (with Call 911 first) → browser GPS → `POST /api/panic` → the on-call team gets an SMS and email with a Google Maps link, the girl's optional name, phone, and note, and an alert ID. The girl sees the ID, Call 911, and Leave This Site.

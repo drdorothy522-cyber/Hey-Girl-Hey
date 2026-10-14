@@ -84,6 +84,7 @@
   }
 
   btn.addEventListener('click', open);
+  if (/[?&]panic=1/.test(location.search)) { open(); history.replaceState(null, '', '/'); }
   sendBtn.addEventListener('click', send);
   cancelBtn.addEventListener('click', close);
   modal.querySelectorAll('[data-close]').forEach(function (el) { el.addEventListener('click', close); });
