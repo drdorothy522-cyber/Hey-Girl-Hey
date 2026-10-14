@@ -45,6 +45,27 @@ The home hero is a pink gradient with the logo. To use a group photo instead, ad
 - Contact form asks "Is it safe to contact you this way?"
 - Form inputs use `autocomplete="off"` to avoid leaving saved data on shared devices.
 
+## Panic button (home page)
+
+A hot pink **I Need Help Now** button under the hero. Flow: confirm sheet (with Call 911 first) → browser GPS → `POST /api/panic` → the on-call team gets an SMS and email with a Google Maps link, the girl's optional name, phone, and note, and an alert ID. The girl sees the ID, Call 911, and Leave This Site.
+
+- `api/panic.js` is a zero-dependency Vercel serverless function. SMS via Twilio, email via Resend, each enabled only when its env vars are set.
+- **It is off until `PANIC_ENABLED=true` is set in Vercel.** Until then the button shows "The alert system is not turned on yet. Call 911 now."
+- Copy `.env.example` into Vercel → Settings → Environment Variables → Production.
+- Rate limit: 3 alerts per device per 10 minutes, 30 per hour site-wide. Durable across instances if Upstash Redis vars are set, otherwise per-instance.
+- Origin check: only hghey.org and Vercel preview domains may call the API.
+- Audit: each alert is logged to Vercel function logs (no IP) and, if Upstash is configured, kept for 24 hours under `panic:log:<ID>`.
+- Geolocation is permitted via `Permissions-Policy: geolocation=(self)` in `vercel.json`. Do not remove.
+
+### Before turning it on
+
+1. **Written response protocol.** Who is on call, what they do when a text arrives, and the rule that nobody approaches a location alone or without police. The alert text itself says "Call 911 if there is immediate danger. Do not approach alone."
+2. **On-call list, not everyone.** `ALERT_SMS_TO` should be 2 to 4 trained people on rotation, not the whole mentor roster.
+3. **Twilio US SMS registration.** A2P 10DLC (business number) or toll-free verification. Unregistered traffic is filtered by carriers. Start this first; it can take weeks.
+4. **Resend domain verification** for hghey.org so alert emails are not marked spam.
+5. **Test alert** from a phone off wifi with location on, and one with location denied.
+6. **Liability review** with the nonprofit's insurer and counsel. A rescue promise is a duty of care.
+
 ## Before launch (TODO)
 
 - [ ] Verify every phone number in the **Local Shelters & Services** block.

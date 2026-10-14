@@ -24,6 +24,8 @@
 
   var exitBtn = document.getElementById('quick-exit');
   if (exitBtn) exitBtn.addEventListener('click', quickExit);
+  var panicExit = document.getElementById('panic-exit');
+  if (panicExit) panicExit.addEventListener('click', quickExit);
 
   // Double-tap ESC within 1.5s to exit.
   var lastEsc = 0;

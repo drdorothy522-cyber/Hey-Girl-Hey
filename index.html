@@ -61,6 +61,10 @@
           <a href="/about" class="btn btn--light">Learn More</a>
           <a href="/support#donate" class="btn btn--outline btn--outline-light">Donate Now</a>
         </div>
+        <button id="panic-btn" class="panic-btn" type="button">
+          <span class="panic-btn__icon" aria-hidden="true">!</span>
+          <span class="panic-btn__text">I Need Help Now<small>Alerts the team &amp; shares your location</small></span>
+        </button>
       </div>
     </section>
 
@@ -113,6 +117,50 @@
       </div>
     </section>
 
+    <!-- PANIC MODAL -->
+    <div id="panic-modal" class="panic-modal" role="dialog" aria-modal="true" aria-labelledby="panic-title" hidden>
+      <div class="panic-sheet">
+        <div data-step="confirm">
+          <h2 id="panic-title" class="panic-sheet__title">Send an emergency alert?</h2>
+          <p class="panic-sheet__danger"><strong>In immediate danger?</strong> <a class="btn btn--danger" href="tel:911">Call 911</a></p>
+          <p>This sends your location to the H.E.Y. G.I.R.L. on-call team right now.</p>
+          <p id="panic-loc" class="panic-sheet__loc" aria-live="polite">Getting your location…</p>
+          <div class="field"><label for="panic-name">Your name or nickname (optional)</label><input id="panic-name" type="text" autocomplete="off" maxlength="60"></div>
+          <div class="field"><label for="panic-phone">A number the team can call or text (optional)</label><input id="panic-phone" type="tel" autocomplete="off" maxlength="30"></div>
+          <div class="field"><label for="panic-note">Anything the team should know (optional)</label><input id="panic-note" type="text" autocomplete="off" maxlength="300" placeholder="e.g. apartment 4B, he is here now"></div>
+          <input id="panic-website" type="text" name="website" tabindex="-1" autocomplete="off" class="panic-hp" aria-hidden="true">
+          <div class="panic-sheet__actions">
+            <button id="panic-send" class="btn panic-send" type="button">Send Alert Now</button>
+            <button id="panic-cancel" class="btn btn--outline" type="button">Cancel</button>
+          </div>
+        </div>
+        <div data-step="sending" hidden>
+          <h2 class="panic-sheet__title">Sending…</h2>
+          <p>Hold on. If this takes more than a few seconds, call 911.</p>
+          <a class="btn btn--danger" href="tel:911">Call 911</a>
+        </div>
+        <div data-step="sent" hidden>
+          <h2 class="panic-sheet__title">Alert sent.</h2>
+          <p>The team has your alert <span id="panic-id" class="panic-sheet__id"></span> and is being notified now.</p>
+          <p><strong>If you are in immediate danger, call 911.</strong> Stay somewhere safe if you can. The team will contact you at the number you gave.</p>
+          <div class="panic-sheet__actions">
+            <a class="btn btn--danger" href="tel:911">Call 911</a>
+            <button class="btn btn--outline" type="button" id="panic-exit">Leave this site</button>
+            <button class="btn btn--outline" type="button" data-close>Close</button>
+          </div>
+        </div>
+        <div data-step="failed" hidden>
+          <h2 class="panic-sheet__title">Alert not sent.</h2>
+          <p id="panic-fail"></p>
+          <p>National Domestic Violence Hotline: <a href="tel:18007997233">1-800-799-7233</a> · Text <strong>START</strong> to <a href="sms:88788?body=START">88788</a></p>
+          <div class="panic-sheet__actions">
+            <a class="btn btn--danger" href="tel:911">Call 911</a>
+            <button class="btn btn--outline" type="button" data-close>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer class="site-footer">
@@ -140,6 +188,7 @@
     </div>
   </footer>
 
+  <script src="/assets/js/panic.js?v=827fbb9" defer></script>
   <script src="/assets/js/main.js?v=827fbb9" defer></script>
 </body>
 </html>
