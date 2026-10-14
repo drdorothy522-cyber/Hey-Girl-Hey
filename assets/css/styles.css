@@ -23,6 +23,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 body { margin: 0; font-family: var(--font); font-weight: 300; color: var(--ink); background: #fff; line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; height: auto; display: block; }
